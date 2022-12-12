@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121c7d5c-6b66-417d-ae79-90d6a587f788" name="Changes" comment="review part is added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="121c7d5c-6b66-417d-ae79-90d6a587f788" name="Changes" comment="EU-9 review SQL-DATABASE Testing-JDBC" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670875136228</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="EU-9 review SQL-DATABASE Testing-JDBC">
+      <created>1670882655553</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670882655553</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +260,7 @@
     <MESSAGE value="init push" />
     <MESSAGE value="updated" />
     <MESSAGE value="review part is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="review part is added" />
+    <MESSAGE value="EU-9 review SQL-DATABASE Testing-JDBC" />
+    <option name="LAST_COMMIT_MESSAGE" value="EU-9 review SQL-DATABASE Testing-JDBC" />
   </component>
 </project>
