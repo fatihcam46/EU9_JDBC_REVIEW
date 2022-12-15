@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="121c7d5c-6b66-417d-ae79-90d6a587f788" name="Changes" comment="EU-9 review SQL-DATABASE Testing-JDBC,">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/review/sqlReview.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/review/sqlReview.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +166,7 @@
       <workItem from="1669804553320" duration="786000" />
       <workItem from="1669807685845" duration="2166000" />
       <workItem from="1670797361241" duration="20400000" />
+      <workItem from="1671129880034" duration="9176000" />
     </task>
     <task id="LOCAL-00001" summary="init push">
       <created>1667764211609</created>

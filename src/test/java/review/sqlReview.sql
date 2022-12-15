@@ -1,31 +1,31 @@
--- select
-select * from EMPLOYEES;  -- ctrl + enter in windows    command + enter in mac
+--1) select
+select * from EMPLOYEES;  -- ctrl + enter in windows(run for )    command + enter in mac
 
 select FIRST_NAME from EMPLOYEES;
 
 select FIRST_NAME, LAST_NAME, SALARY from EMPLOYEES;
 
--- distinct   ruturning unique data
+--2) distinct   returning unique data
 select distinct FIRST_NAME from EMPLOYEES;
 
--- where   condition to eliminate result
+--3) where   condition to eliminate result
 select FIRST_NAME from EMPLOYEES
-where FIRST_NAME = 'David';
+where FIRST_NAME = 'David'; -- ilk ismi david olanlar
 
 select FIRST_NAME from EMPLOYEES
-where FIRST_NAME != 'David';
+where FIRST_NAME != 'David'; --ilk ismi david olmayanlar
 
 select FIRST_NAME from EMPLOYEES
-where FIRST_NAME <> 'David';
+where FIRST_NAME <> 'David';--ilk ismi david olmayanlar
 
 select SALARY from EMPLOYEES
 where SALARY >= 10000;
 
 select SALARY from EMPLOYEES
-where  SALARY > 5000 and SALARY < 9000;
+where  SALARY > 5000 and SALARY < 9000;  --arasinda
 
 select SALARY from EMPLOYEES
-where  SALARY > 5000 and SALARY < 4000;
+where  SALARY > 5000 and SALARY < 4000;  --it is not logical  no result
 
 select SALARY from EMPLOYEES
 where  SALARY = 10000 or SALARY = 9000;
@@ -33,22 +33,21 @@ where  SALARY = 10000 or SALARY = 9000;
 select SALARY from EMPLOYEES
 where  SALARY = 10000 or SALARY = 9000 or SALARY = 5000 or SALARY = 6000;
 
--- between is including edge values
+--4) between is including edge values
 select  SALARY from EMPLOYEES
 where  SALARY between 5000 and 9000;
 
--- in operator  return values in a list
+-- 5) in operator  return values in a list
 select SALARY from EMPLOYEES
 where  SALARY in (10000, 9000, 6000, 5000, 7000, 8000);
 
 select  FIRST_NAME from EMPLOYEES
 where  FIRST_NAME in ('David', 'Steven');
-
+  --not in
 select  FIRST_NAME from EMPLOYEES
 where  FIRST_NAME not in ('David', 'Steven', 'Ellen');
 
--- order
--- we can order our result/data by ascending or descending order
+--6) order -- we can order our result/data by ascending or descending order
 select  SALARY from EMPLOYEES
 order by SALARY; -- order default by ascending
 
@@ -64,20 +63,20 @@ order by FIRST_NAME desc ;
 select  FIRST_NAME , LAST_NAME from EMPLOYEES
 order by FIRST_NAME desc , LAST_NAME asc ;
 
--- count  returning count of data
+--7) count  returning count of data
 select  count(*) from EMPLOYEES;
 
 -- count is only counting the data that has value, it's not counting null values.
 select count(COMMISSION_PCT) from  EMPLOYEES;
 select COMMISSION_PCT from EMPLOYEES;
 
--- like
+--8) like
 -- % represents the missing part
 select  FIRST_NAME from EMPLOYEES
 where FIRST_NAME like 'M%';
 
 select LAST_NAME from EMPLOYEES
-where  LAST_NAME like '%et';
+where  LAST_NAME like '%t';
 
 select JOB_ID from EMPLOYEES
 where JOB_ID like '%';
@@ -85,7 +84,7 @@ where JOB_ID like '%';
 select FIRST_NAME from EMPLOYEES
     where FIRST_NAME like '%v%';
 
--- underscore _ represents a single character
+-- 9)underscore _ represents a single character
 select  FIRST_NAME from EMPLOYEES
 where FIRST_NAME like  '_____';
 
@@ -99,7 +98,7 @@ select COMMISSION_PCT from EMPLOYEES
 where COMMISSION_PCT like '%';
 
 
--- aggregate functions
+--10) aggregate functions  max-min-avg-sum
 -- max
 select  max(SALARY) from EMPLOYEES;
 
@@ -122,10 +121,11 @@ select sum(COMMISSION_PCT) from EMPLOYEES;
 
 select round(sum(COMMISSION_PCT)) from EMPLOYEES;
 
--- round function, if the number after decimal point is bigger or equal to 5, it will round to the whole number
+-- round function, if the number after decimal point is bigger or equal to 5,
+--     it will round to the whole number
 -- if the number after decimal point is smaller than 5, it will not round to the whole number
 
--- group by    put same data into one group
+--11) group by    put same data into one group
 select JOB_ID from EMPLOYEES;
 select JOB_ID from  EMPLOYEES
 group by JOB_ID;
@@ -134,12 +134,12 @@ select DEPARTMENT_ID from EMPLOYEES
 group by DEPARTMENT_ID;
 
 select DEPARTMENT_ID , count(DEPARTMENT_ID) from EMPLOYEES
-group by DEPARTMENT_ID;
+group by DEPARTMENT_ID;  --which department how many workers are there?
 
 select MANAGER_ID, avg(SALARY) from EMPLOYEES
 group by MANAGER_ID;
 
--- having    after data is put to some groups, then filter the data by putting some condition
+--12) having    after data is put to some groups, then filter the data by putting some condition
 select MANAGER_ID, avg(SALARY) from EMPLOYEES
 group by MANAGER_ID
 having avg(SALARY) > 5000;
@@ -153,12 +153,12 @@ having sum(SALARY) < 7000;
 -- having is put condition after group, applies to grouped rows
 
 
--- row number  return us the result with that row number
+--13) row number  return us the result with that row number
 select FIRST_NAME from EMPLOYEES
 where ROWNUM <= 10;
 
 
--- sub query
+--14) sub query
 -- like nested if or nested for loop, it's query inside another query.
 select round(avg(SALARY)) from EMPLOYEES;
 
@@ -180,10 +180,10 @@ where ROWNUM < 15;
 select SALARY from EMPLOYEES
 order by SALARY desc ;
 
--- string functions
+-- 15)string functions
 -- concatenation   first value || second value  ( it's like  string1 + string2 in java)
 select email from EMPLOYEES;
-select FIRST_NAME||LAST_NAME||'@gmail.com' as fullEmail from EMPLOYEES;
+select FIRST_NAME||LAST_NAME||'@gmail.com' as fullEmail from EMPLOYEES;--we dont have this column we created
 
 select EMPLOYEE_ID||FIRST_NAME as newId from EMPLOYEES;
 
@@ -196,25 +196,25 @@ select lower(LAST_NAME) from EMPLOYEES;
 -- length   return us the size of that string
 select FIRST_NAME, length(FIRST_NAME) from EMPLOYEES;
 
--- intcap  converting the first character of the data to upper case or capitalizing it
+--16) intcap  converting the first character of the data to upper case or capitalizing it
 select * from EMPLOYEES;
 select initcap(EMAIl) from EMPLOYEES;
 
--- substring   index starts from 1
+-- 17)substring   index starts from 1
 select FIRST_NAME, substr(FIRST_NAME,1,3) from  EMPLOYEES
 order by FIRST_NAME asc ;
 select LAST_NAME, substr(LAST_NAME,2,2) from  EMPLOYEES;
 
 select substr(FIRST_NAME,1,1)|| substr(LAST_NAME,1,1) as newName from EMPLOYEES;
 
---view  create a virtual table
+--18) view  create a virtual table
 create view newEmail1 as select EMAIL as email from EMPLOYEES;
 
 create view realEmail1 as select FIRST_NAME||'.'||LAST_NAME||'@gmail.com' as realEmail from EMPLOYEES;
 
 create view realEmail as select FIRST_NAME||'.'||LAST_NAME||'@gmail.com' as realEmail from EMPLOYEES;
 
---join
+--19)join
 -- (INNER) JOIN: Returns records that have matching values in both tables
 -- LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
 -- RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
@@ -222,47 +222,47 @@ create view realEmail as select FIRST_NAME||'.'||LAST_NAME||'@gmail.com' as real
 
 -- return job_id and manager_in in the same table
 select JOB_ID, DEPARTMENTS.MANAGER_ID from EMPLOYEES
-inner join DEPARTMENTS
-on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
+    inner join DEPARTMENTS
+    on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
 
 -- who works in which department
 select FIRST_NAME, LAST_NAME, DEPARTMENT_NAME from EMPLOYEES
-left join DEPARTMENTS
-on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
+     left join DEPARTMENTS
+     on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
 
 select FIRST_NAME, LAST_NAME, DEPARTMENT_NAME from EMPLOYEES
-                                                       left join DEPARTMENTS
-                                                                 on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID
-where DEPARTMENT_NAME='Shipping';
+       left join DEPARTMENTS
+        on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID
+       where DEPARTMENT_NAME='Shipping';
 
 -- find out the employees who left the company
 select END_DATE from JOB_HISTORY;
 select FIRST_NAME from EMPLOYEES;
 
 select FIRST_NAME, END_DATE from EMPLOYEES
-right join JOB_HISTORY
-on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
+   right join JOB_HISTORY
+    on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
 
 select FIRST_NAME, END_DATE from EMPLOYEES
-                                     left join JOB_HISTORY
-                                                on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
+         left join JOB_HISTORY
+          on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
 
 
 -- department name and city together
 select DEPARTMENT_NAME, CITY from DEPARTMENTS
-full join LOCATIONS
-on DEPARTMENTS.LOCATION_ID = LOCATIONS.LOCATION_ID;
+     full join LOCATIONS
+      on DEPARTMENTS.LOCATION_ID = LOCATIONS.LOCATION_ID;
 
 -- we can put shortcut for those table name
 select DEPARTMENT_NAME, CITY from DEPARTMENTS d
-                                      full join LOCATIONS l
-                                                on d.LOCATION_ID = l.LOCATION_ID;
+           full join LOCATIONS l
+             on d.LOCATION_ID = l.LOCATION_ID;
 
 
 select DEPARTMENT_NAME, CITY from DEPARTMENTS d
-                                      full join LOCATIONS l
-                                                on d.LOCATION_ID = l.LOCATION_ID
-where CITY='Seattle';
+       full join LOCATIONS l
+       on d.LOCATION_ID = l.LOCATION_ID
+       where CITY='Seattle';
 
 -- self join,  joining the table with itself
 -- all employees firstname, lastname and their managers first and lastname(we can use order by)
